@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewApp.Page.RaplyList"
+             Title="RaplyList">
+    <StackLayout Margin="10">
+        <Label x:Name="Question" FontSize="Large" />
+        <Entry x:Name="StringContent" Margin="15" 
+               Placeholder="Enter the some string"
+               PlaceholderColor="Black"
+               BackgroundColor="AliceBlue"
+               Keyboard="Chat"/>
+        <Entry x:Name="IntegerContent" Margin="15" 
+               Placeholder="Enter the some interger"
+               PlaceholderColor="Black"
+               BackgroundColor="AliceBlue"
+               Keyboard="Chat"/>
+        <StackLayout Margin="10" Orientation="Horizontal">
+            <RadioButton CheckedChanged="RadioButton" Content="№1" />
+            <RadioButton CheckedChanged="RadioButton" Content="№2" />
+            <RadioButton CheckedChanged="RadioButton" Content="№3" />
+            <RadioButton CheckedChanged="RadioButton" Content="№4" />
+        </StackLayout>
+        <StackLayout Margin="10" Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="№1"/>
+                <CheckBox CheckedChanged="FirstCheckBox"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="№2"/>
+                <CheckBox CheckedChanged="SecondCheckBox"/>
+            </StackLayout>
+        </StackLayout>
+        <Button Clicked="OnClickEvent" Margin="10" HorizontalOptions="EndAndExpand" Text="Submit" />
+        <Button Clicked="OnGet" Margin="10" HorizontalOptions="EndAndExpand" Text="Get items" />
+    </StackLayout>
+</ContentPage>
