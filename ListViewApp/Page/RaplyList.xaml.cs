@@ -77,7 +77,24 @@ public partial class RaplyList : ContentPage
     {
         try
         {
-            var test = await App.Cache.GetCache();
+            var Model = await App.Cache.GetCache(topicData.ID, questionData.ID);
+
+            StringContent.Text = Model.Text;
+            IntegerContent.Text = Model.Number;
+
+            if (Model.RadioButtonChoose.Contains("1"))
+                btn1.IsChecked = true;
+            if (Model.RadioButtonChoose.Contains("2"))
+                btn2.IsChecked = true;
+            if (Model.RadioButtonChoose.Contains("3"))
+                btn3.IsChecked = true;
+            if (Model.RadioButtonChoose.Contains("4"))
+                btn4.IsChecked = true; 
+            
+            if (Model.ChackBoxChoose.Contains("1"))
+                box1.IsChecked = true;
+            if (Model.ChackBoxChoose.Contains("2"))
+                box2.IsChecked = true;
         }
         catch (Exception ex)
         {

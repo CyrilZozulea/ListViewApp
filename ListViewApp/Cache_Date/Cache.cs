@@ -36,11 +36,11 @@ namespace ListViewApp.Cache_Date
             return await conntection.InsertAsync(person);
         }
 
-        public async Task<List<Individual_Chooses>> GetCache()
+        public async Task<Individual_Chooses> GetCache(int topicID, int questionID)
         {
             await Init();
 
-            return await conntection.Table<Individual_Chooses>().ToListAsync();
+            return await conntection.Table<Individual_Chooses>().FirstOrDefaultAsync(x => x.TopicID == topicID && x.QuestinID == questionID);
         }
 
         public async void DeleteAllCache()
